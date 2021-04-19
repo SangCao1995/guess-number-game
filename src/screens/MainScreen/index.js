@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {Header} from '../../components';
 import {GameScreen} from '../GameScreen';
 import {StartGameScreen} from '../StartGameScreen';
@@ -39,9 +39,9 @@ export const MainScreen = () => {
   }
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <Header title={'Guess a number'} />
       {content}
-    </View>
+    </SafeAreaView>
   );
 };

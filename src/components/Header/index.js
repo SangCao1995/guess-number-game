@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Platform} from 'react-native';
+import {Colors} from '../../themes';
 
 export const Header = ({title}) => {
   return (
@@ -15,11 +16,14 @@ const styles = StyleSheet.create({
     height: 90,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f7287b',
+    backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white',
+    borderBottomColor: Platform.OS === 'ios' ? '#ccc' : 'transparent',
+    borderBottomWidth: Platform.OS === 'ios' ? 1 : 0,
   },
 
   headerTitle: {
     fontSize: 18,
     fontFamily: 'OpenSans-Bold',
+    color: Platform.OS === 'ios' ? Colors.primary : 'white',
   },
 });
